@@ -25,6 +25,7 @@ logging:
     org.hibernate.type: trace
     org.hibernate.type.descriptor.sql: trace
     org.hibernate.orm.jdbc.bind: trace
+    ## TODO : OpenFegin의 로그를 사용하기 위해서는 이곳에 OpenFegin의 패키지 경로를 넣는다. (ex. com.michael.example.proxy.TestProxy: DEBUG)
     root: info
 
 ---
