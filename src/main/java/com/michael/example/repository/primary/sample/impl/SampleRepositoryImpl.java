@@ -3,6 +3,7 @@ package com.michael.example.repository.primary.sample.impl;
 import static com.michael.example.repository.primary.sample.entity.QSample.*;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -27,10 +28,12 @@ public class SampleRepositoryImpl implements SampleRepository {
 	 */
 	@Override
 	public List<SampleBoundEntity> selectSampleTestData() {
-		return jpaQueryFactory.select(
-				Projections.bean(SampleBoundEntity.class, sample.name, sample.id, sample.seq))
-			.from(sample)
-			.fetch();
+		return Optional.ofNullable(
+			jpaQueryFactory.select(
+					Projections.bean(SampleBoundEntity.class, sample.name, sample.id, sample.seq))
+				.from(sample)
+				.fetch()
+		).orElseGet(List::of);
 	}
 
 	/***
@@ -40,11 +43,13 @@ public class SampleRepositoryImpl implements SampleRepository {
 	 */
 	@Override
 	public SampleBoundEntity selectSampleTestDataById(int seq) {
-		return jpaQueryFactory.select(
-				Projections.bean(SampleBoundEntity.class, sample.name, sample.id, sample.seq))
-			.from(sample)
-			.where(sample.seq.eq(seq))
-			.fetchOne();
+		return Optional.ofNullable(
+			jpaQueryFactory.select(
+					Projections.bean(SampleBoundEntity.class, sample.name, sample.id, sample.seq))
+				.from(sample)
+				.where(sample.seq.eq(seq))
+				.fetchOne()
+		).orElseGet(SampleBoundEntity::new);
 	}
 
 	/***

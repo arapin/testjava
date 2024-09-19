@@ -1,5 +1,7 @@
 package com.michael.example.service.sample.model;
 
+import org.apache.commons.lang3.StringUtils;
+
 import lombok.*;
 
 @Getter
@@ -15,5 +17,9 @@ public class SampleModel {
 		this.seq = seq;
 		this.id = id;
 		this.name = name;
+	}
+
+	public boolean validate() {
+		return StringUtils.isNotBlank(id) || StringUtils.isNotBlank(name);
 	}
 }

@@ -46,7 +46,7 @@ public class SampleServiceImpl implements SampleService {
 		SampleModel data = sampleEntityConverter.convertSampleEntityToSampleModel(
 			sampleRepository.selectSampleTestDataById(seq));
 
-		if (data == null) {
+		if (!data.validate()) {
 			throw new ApiException(ResponseStatus.DATA_NOT_FOUND);
 		}
 
@@ -90,7 +90,7 @@ public class SampleServiceImpl implements SampleService {
 	public void sampleDataDeleted(int seq) {
 		try {
 			sampleRepository.deleteSampleTestData(seq);
-		} catch (Exception e) {
+		} catch (Exception exception) {
 			throw new ApiException(ResponseStatus.DATABASE_DELETE_SERVER_ERROR);
 		}
 	}
