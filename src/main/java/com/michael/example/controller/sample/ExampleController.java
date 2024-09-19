@@ -34,8 +34,7 @@ public class ExampleController {
 			ResponseStatus.TEST_SUCCESS.getMessage());
 	}
 
-	@PostMapping(value = {"/sample"})
-	public ResponseMessage<Void> sampleRegist(@RequestBody SampleDto dto) {
+	@PostMapping(value = {"/sample"}) public ResponseMessage<Void> sampleRegist(@RequestBody SampleDto dto) {
 		sampleService.sampleDataSaved(converter.convertSampleDtoToSampleModel(dto));
 		return ResponseMessage.success(null, ResponseStatus.SAMPLE_REGIST_SUCCESS.getMessage());
 	}
