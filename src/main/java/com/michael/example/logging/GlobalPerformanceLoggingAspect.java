@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Slf4j
 public class GlobalPerformanceLoggingAspect {
-	@Around("execution(* com.gme.gmeloanapi.service..*(..))")
+	@Around("execution(* com.michael.example.service..*(..))")
 	public Object measurePerformance(ProceedingJoinPoint joinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		Object result = joinPoint.proceed();
