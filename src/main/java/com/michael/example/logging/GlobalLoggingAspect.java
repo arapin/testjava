@@ -28,7 +28,7 @@ public class GlobalLoggingAspect {
 
 	private static final String LOG_TAB = "\t";
 
-	@Pointcut("within(com.gme.gmeloanapi.controller..*)") // 패키지 범위 설정
+	@Pointcut("within(com.michael.example.controller..*)") // 패키지 범위 설정
 	public void controllerMethods() {
 	}
 
@@ -42,7 +42,7 @@ public class GlobalLoggingAspect {
 		logEnd(joinPoint, returnValue, GlobalConstants.END_REQUEST);
 	}
 
-	@Pointcut("within(com.gme.gmeloanapi.service..*)")
+	@Pointcut("within(com.michael.example.service..*)")
 	public void serviceMethods() {
 	}
 

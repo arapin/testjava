@@ -1,9 +1,10 @@
 package com.michael.example.repository.primary.sample.impl;
 
-import static com.michael.example.repository.primary.sample.entity.QSampleEntity.*;
+import static com.michael.example.repository.primary.sample.entity.QSample.*;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.michael.example.repository.primary.sample.entity.SampleBoundEntity;
@@ -16,7 +17,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 public class SampleRepositoryImpl implements SampleRepository {
 	private final JPAQueryFactory jpaQueryFactory;
 
-	public SampleRepositoryImpl(JPAQueryFactory jpaQueryFactory) {
+	public SampleRepositoryImpl(@Qualifier("primaryQueryFactory") JPAQueryFactory jpaQueryFactory) {
 		this.jpaQueryFactory = jpaQueryFactory;
 	}
 
@@ -27,8 +28,8 @@ public class SampleRepositoryImpl implements SampleRepository {
 	@Override
 	public List<SampleBoundEntity> selectSampleTestData() {
 		return jpaQueryFactory.select(
-				Projections.bean(SampleBoundEntity.class, sampleEntity.name, sampleEntity.id, sampleEntity.seq))
-			.from(sampleEntity)
+				Projections.bean(SampleBoundEntity.class, sample.name, sample.id, sample.seq))
+			.from(sample)
 			.fetch();
 	}
 
@@ -40,9 +41,9 @@ public class SampleRepositoryImpl implements SampleRepository {
 	@Override
 	public SampleBoundEntity selectSampleTestDataById(int seq) {
 		return jpaQueryFactory.select(
-				Projections.bean(SampleBoundEntity.class, sampleEntity.name, sampleEntity.id, sampleEntity.seq))
-			.from(sampleEntity)
-			.where(sampleEntity.seq.eq(seq))
+				Projections.bean(SampleBoundEntity.class, sample.name, sample.id, sample.seq))
+			.from(sample)
+			.where(sample.seq.eq(seq))
 			.fetchOne();
 	}
 
@@ -52,8 +53,8 @@ public class SampleRepositoryImpl implements SampleRepository {
 	 */
 	@Override
 	public void insertSampleTestData(SampleModel sampleModel) {
-		jpaQueryFactory.insert(sampleEntity)
-			.columns(sampleEntity.id, sampleEntity.name)
+		jpaQueryFactory.insert(sample)
+			.columns(sample.id, sample.name)
 			.values(sampleModel.getId(), sampleModel.getName())
 			.execute();
 	}
@@ -64,10 +65,10 @@ public class SampleRepositoryImpl implements SampleRepository {
 	 */
 	@Override
 	public void updateSampleTestData(SampleModel sampleModel) {
-		jpaQueryFactory.update(sampleEntity)
-			.set(sampleEntity.name, sampleModel.getName())
-			.set(sampleEntity.id, sampleModel.getId())
-			.where(sampleEntity.seq.eq(sampleModel.getSeq()))
+		jpaQueryFactory.update(sample)
+			.set(sample.name, sampleModel.getName())
+			.set(sample.id, sampleModel.getId())
+			.where(sample.seq.eq(sampleModel.getSeq()))
 			.execute();
 	}
 
@@ -77,6 +78,6 @@ public class SampleRepositoryImpl implements SampleRepository {
 	 */
 	@Override
 	public void deleteSampleTestData(int seq) {
-		jpaQueryFactory.delete(sampleEntity).where(sampleEntity.seq.eq(seq)).execute();
+		jpaQueryFactory.delete(sample).where(sample.seq.eq(seq)).execute();
 	}
 }

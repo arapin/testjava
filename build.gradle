@@ -66,6 +66,10 @@ dependencies {
 
     // OPEN Feign
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    // mysql
+    // runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'mysql:mysql-connector-java:8.0.33'
 }
 
 ext {

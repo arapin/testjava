@@ -15,22 +15,13 @@ import jakarta.persistence.PersistenceContext;
  */
 @Configuration
 public class QueryDslConfig {
-	@PersistenceContext(unitName = "financeEntityManager")
-	private EntityManager financeEntityManager;
-
-	@PersistenceContext(unitName = "coreEntityManager")
-	private EntityManager coreEntityManager;
+	@PersistenceContext(unitName = "primaryEntityManager")
+	private EntityManager primaryEntityManager;
 
 	@Primary
 	@Bean
-	@Qualifier("financeQueryFactory")
+	@Qualifier("primaryQueryFactory")
 	public JPAQueryFactory financeQueryFactory() {
-		return new JPAQueryFactory(financeEntityManager);
-	}
-
-	@Bean
-	@Qualifier("coreQueryFactory")
-	public JPAQueryFactory coreJpaQueryFactory() {
-		return new JPAQueryFactory(coreEntityManager);
+		return new JPAQueryFactory(primaryEntityManager);
 	}
 }
