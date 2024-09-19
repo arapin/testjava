@@ -1,0 +1,2 @@
+# 테스트
+GET http://{{server}}/loan-api/v2/test
