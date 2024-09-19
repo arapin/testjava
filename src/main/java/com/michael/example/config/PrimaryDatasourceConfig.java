@@ -1,5 +1,7 @@
 package com.michael.example.config;
 
+import java.util.Objects;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -58,6 +60,6 @@ public class PrimaryDatasourceConfig {
 	public PlatformTransactionManager primaryTransactionManager(
 		final @Qualifier("primaryEntityManagerFactory") LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean
 	) {
-		return new JpaTransactionManager(localContainerEntityManagerFactoryBean.getObject());
+		return new JpaTransactionManager(Objects.requireNonNull(localContainerEntityManagerFactoryBean.getObject()));
 	}
 }
