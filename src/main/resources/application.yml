@@ -25,7 +25,6 @@ logging:
     org.hibernate.type: trace
     org.hibernate.type.descriptor.sql: trace
     org.hibernate.orm.jdbc.bind: trace
-    com.gme.gmeloanapi.proxy.OpenBankAccountProxy: DEBUG
     root: info
 
 ---
