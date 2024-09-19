@@ -1,6 +1,6 @@
 package com.michael.example.service.impl;
 
-import com.michael.example.converter.sample.SampleConverter;
+import com.michael.example.controller.sample.converter.SampleConverter;
 import com.michael.example.service.sample.model.converter.SampleEntityConverter;
 import com.michael.example.enumeration.http.ResponseStatus;
 import com.michael.example.exception.ApiException;

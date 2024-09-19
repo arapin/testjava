@@ -16,5 +16,11 @@ public interface SampleEntityConverter {
 	 */
 	List<SampleModel> convertSampleEntityListToSampleModelList(List<SampleBoundEntity> sampleEntityList);
 
+	/**
+	 * Converts a SampleBoundEntity object to a SampleModel object.
+	 *
+	 * @param sampleBoundEntity the SampleBoundEntity object to be converted
+	 * @return the corresponding SampleModel object, or null if the input is null
+	 */
 	SampleModel convertSampleEntityToSampleModel(SampleBoundEntity sampleBoundEntity);
 }

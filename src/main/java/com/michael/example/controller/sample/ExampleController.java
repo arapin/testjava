@@ -2,7 +2,7 @@ package com.michael.example.controller.sample;
 
 import com.michael.example.controller.sample.dto.SampleDto;
 import com.michael.example.controller.sample.dto.SampleUpdateDto;
-import com.michael.example.converter.sample.SampleConverter;
+import com.michael.example.controller.sample.converter.SampleConverter;
 import com.michael.example.enumeration.http.ResponseStatus;
 import com.michael.example.model.http.ResponseMessage;
 import com.michael.example.service.sample.SampleService;

@@ -1,4 +1,4 @@
-package com.michael.example.converter.sample;
+package com.michael.example.controller.sample.converter;
 
 import com.michael.example.controller.sample.dto.SampleDto;
 import com.michael.example.controller.sample.dto.SampleUpdateDto;
