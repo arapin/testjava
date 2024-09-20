@@ -24,7 +24,10 @@ public class SecurityConfig {
 		http.csrf(AbstractHttpConfigurer::disable);
 		http.formLogin(AbstractHttpConfigurer::disable);
 		http.httpBasic(AbstractHttpConfigurer::disable);
-		http.authorizeHttpRequests((auth) -> auth.requestMatchers("/shopping/order", "/shopping/member/**").authenticated()
+		http.authorizeHttpRequests((auth) -> auth.requestMatchers(
+			"/shopping/order/**",
+			"/shopping/member/**"
+			).authenticated()
 			.anyRequest().permitAll()
 		);
 		http.addFilterAt(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
