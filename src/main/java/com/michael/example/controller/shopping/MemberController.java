@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.michael.example.controller.shopping.converter.LoginModelToResponseConverter;
 import com.michael.example.controller.shopping.converter.MemberModelToResponseConverter;
 import com.michael.example.controller.shopping.dto.MemberResponse;
 import com.michael.example.enumeration.http.ResponseStatus;
