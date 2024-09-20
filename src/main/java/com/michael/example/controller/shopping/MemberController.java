@@ -23,6 +23,16 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
 	private final MemberService memberService;
 	private final MemberModelToResponseConverter memberModelToResponseConverter;
+
+	/**
+	 * 고객 정보조회 API
+	 *
+	 * 이 메서드는 주어진 사용자 ID를 사용하여 고객정보를 조회하고,
+	 * 응답 메시지를 반환합니다. 이 API는 JWT 토큰을 사용한 인증이 필요합니다.
+	 *
+	 * @param userId 조회할 사용자의 ID
+	 * @return 고객 정보가 포함된 응답 메시지
+	 */
 	@GetMapping(value = {"/member/{userId}"})
 	@Operation(summary = "고객 정보조회 API", description = "고객정보를 조회하여 응답한다. (로그인을 한후에 나온 JWT Token을 이용하여 인증을 한다.)", security = {
 		@SecurityRequirement(name = "Authorization")})

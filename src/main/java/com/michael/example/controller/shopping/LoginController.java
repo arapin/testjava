@@ -26,6 +26,13 @@ public class LoginController {
 	private final LoginRequestToModelConverter loginRequestToModelConverter;
 	private final LoginModelToResponseConverter loginModelToResponseConverter;
 
+	/**
+	 * 고객 로그인 API.
+	 * 고객정보를 조회후에 Jwt token을 반환한다.
+	 *
+	 * @param request 로그인 요청 정보를 담고 있는 객체
+	 * @return 로그인 응답 메시지를 포함하는 ResponseMessage 객체
+	 */
 	@PostMapping(value = {"/login"})
 	@Operation(summary = "고객 로그인 API", description = "고객정보를 조회후에 Jwt token을 반환한다.")
 	public ResponseMessage<LoginResponse> login(@RequestBody LoginRequest request) {
