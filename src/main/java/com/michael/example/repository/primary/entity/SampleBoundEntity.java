@@ -1,4 +1,4 @@
-package com.michael.example.repository.primary.sample.entity;
+package com.michael.example.repository.primary.entity;
 
 import lombok.Builder;
 import lombok.Data;

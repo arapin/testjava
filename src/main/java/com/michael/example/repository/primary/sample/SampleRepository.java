@@ -2,7 +2,7 @@ package com.michael.example.repository.primary.sample;
 
 import java.util.List;
 
-import com.michael.example.repository.primary.sample.entity.SampleBoundEntity;
+import com.michael.example.repository.primary.entity.SampleBoundEntity;
 import com.michael.example.service.sample.model.SampleModel;
 
 public interface SampleRepository {

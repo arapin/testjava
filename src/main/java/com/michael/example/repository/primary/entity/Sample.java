@@ -1,4 +1,4 @@
-package com.michael.example.repository.primary.sample.entity;
+package com.michael.example.repository.primary.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "sample")
+@Table(name = "sample", schema = "michael_test")
 @ToString
 @Getter
 @NoArgsConstructor

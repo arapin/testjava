@@ -1,6 +1,6 @@
 package com.michael.example.service.sample.model.converter;
 
-import com.michael.example.repository.primary.sample.entity.SampleBoundEntity;
+import com.michael.example.repository.primary.entity.SampleBoundEntity;
 import com.michael.example.service.sample.model.SampleModel;
 
 import org.mapstruct.Mapper;

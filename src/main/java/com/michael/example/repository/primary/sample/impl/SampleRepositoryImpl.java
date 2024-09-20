@@ -1,6 +1,7 @@
 package com.michael.example.repository.primary.sample.impl;
 
-import static com.michael.example.repository.primary.sample.entity.QSample.*;
+
+import static com.michael.example.repository.primary.entity.QSample.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +9,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.michael.example.repository.primary.sample.entity.SampleBoundEntity;
+import com.michael.example.repository.primary.entity.SampleBoundEntity;
 import com.michael.example.service.sample.model.SampleModel;
 import com.michael.example.repository.primary.sample.SampleRepository;
 import com.querydsl.core.types.Projections;

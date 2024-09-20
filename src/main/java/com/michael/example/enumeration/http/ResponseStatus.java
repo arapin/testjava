@@ -38,12 +38,15 @@ public enum ResponseStatus {
 	DATABASE_UPDATE_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, false, "데이터 수정중 서버에 오류가 발생하였습니다."),
 	DATABASE_DELETE_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, false, "데이터 삭제중 서버에 오류가 발생하였습니다."),
 	FILE_SAVE_FAILURE(HttpStatus.INTERNAL_SERVER_ERROR, false, "파일을 저장중에 오류가 발생을 하였습니다."),
+	ENCRYPT_FAILURE(HttpStatus.INTERNAL_SERVER_ERROR, false, "암호화중 오류가 발생 하였습니다."),
 
 	// 200 OK
 	TEST_SUCCESS(HttpStatus.OK, true, "SAMPLE DATA 조회 성공"),
 	SAMPLE_REGIST_SUCCESS(HttpStatus.OK, true, "SAMPLE DATA 등록 성공"),
 	SAMPLE_UPDATE_SUCCESS(HttpStatus.OK, true, "SAMPLE DATA 수정 성공"),
 	SAMPLE_DELETE_SUCCESS(HttpStatus.OK, true, "SAMPLE DATA 삭제 성공"),
+	LOGIN_SUCCESS(HttpStatus.OK, true, "로그인에 성공 하였습니다."),
+	CUSTOMER_INFO_SELECT_SUCCESS(HttpStatus.OK, true, "고객 정보 조회에 성공 하였습니다."),
 
 	// 201 Created
 	CUSTOMER_CREATE_SUCCESS(HttpStatus.CREATED, true, "고객정보 생성 성공");

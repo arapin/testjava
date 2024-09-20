@@ -11,6 +11,7 @@ import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -26,6 +27,7 @@ import com.zaxxer.hikari.HikariDataSource;
 	entityManagerFactoryRef = "primaryEntityManagerFactory",
 	transactionManagerRef = "primaryTransactionManager"
 )
+@PropertySource(value = "classpath:/application.yml")
 public class PrimaryDatasourceConfig {
 	@Bean
 	@Primary
@@ -50,7 +52,7 @@ public class PrimaryDatasourceConfig {
 		DataSource dataSource = primaryDatasource();
 		return builder
 			.dataSource(dataSource)
-			.packages("com.michael.example.repository.primary.sample.entity") // 첫번째 DB와 관련된 엔티티들이 있는 패키지(폴더) 경로
+			.packages("com.michael.example.repository.primary.entity") // 첫번째 DB와 관련된 엔티티들이 있는 패키지(폴더) 경로
 			.persistenceUnit("primaryEntityManager")
 			.build();
 	}

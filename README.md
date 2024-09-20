@@ -6,6 +6,8 @@ Micahel Test API Server 입니다. Spring Boot를 활용하여 API Server를 구
 4. Swagger
 5. AOP
 6. Open Feign
+7. JWT
+8. Spring Security
 
 ## 프로젝트 소개
 Michael Test API 프로젝트로써 여러가지 실험적인 프로젝트를 다루는 프로젝트 입니다.
