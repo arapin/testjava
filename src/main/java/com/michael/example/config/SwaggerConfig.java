@@ -27,8 +27,8 @@ public class SwaggerConfig {
 	}
 
 	@Bean
-	public OpenAPI gmeLoanApi() {
-		Info info = new Info().title("Michael Test API").description("Michael Test API Documentation");
+	public OpenAPI gmeMichaelTestApi() {
+		Info info = new Info().title("Michael Test APIs").description("Michael Test API Documentation");
 		return new OpenAPI().info(info).components(
 			new Components().addSecuritySchemes("Authorization", new SecurityScheme().name("Authorization")
 				.type(SecurityScheme.Type.HTTP)
