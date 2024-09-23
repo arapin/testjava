@@ -29,6 +29,13 @@ public class JwtTokenUtil {
 			.compact();
 	}
 
+	/**
+	 * 주어진 토큰을 유효성 검사하고 주제를 반환합니다.
+	 *
+	 * @param token 검증할 토큰
+	 * @return 토큰의 주제 (subject)
+	 * @throws IllegalArgumentException base64-encoded 비밀 키가 null이거나 비어있는 경우
+	 */
 	public static String validateToken(String token) {
 		if (StringUtils.isBlank(key)) {
 			throw new IllegalArgumentException("base64-encoded secret key cannot be null or empty.");
