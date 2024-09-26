@@ -29,6 +29,7 @@ public class LoginMemberModel {
 	public boolean validate() {
 		return StringUtils.isNotBlank(this.id) || StringUtils.isNotBlank(this.name);
 	}
+
 	public void jwtTockenGen() {
 		this.token = JwtTokenUtil.generateToken(this.id);
 	}
